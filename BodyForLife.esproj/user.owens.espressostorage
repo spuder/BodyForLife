@@ -7,13 +7,13 @@
 	<key>ESProjectWindowState</key>
 	<dict>
 		<key>ContentSize</key>
-		<string>{1586, 787}</string>
+		<string>{1538, 470}</string>
 		<key>ProjectURL</key>
 		<string>file://localhost/Volumes/750/owens/Github/BodyForLife/BodyForLife.esproj/</string>
 		<key>StateType</key>
 		<string>ProjectWindow</string>
 		<key>TopLeftPoint</key>
-		<string>{23, 872}</string>
+		<string>{-5, 607}</string>
 	</dict>
 	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
 	<false/>
@@ -30,23 +30,19 @@
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Volumes/750/owens/Github/BodyForLife/index.html</string>
+				<string>file://localhost/Volumes/750/owens/Github/BodyForLife/db.php</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Volumes/750/owens/Github/BodyForLife/index.php</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>StateType</key>
 				<string>PreviewTab</string>
-				<key>Title</key>
-				<string>Body For Life</string>
-				<key>URL</key>
-				<string>file:///Volumes/750/owens/Github/BodyForLife/index.html</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
-				<string>file://localhost/Volumes/750/owens/Github/BodyForLife/bfl.css</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
 			</dict>
 		</array>
 	</dict>

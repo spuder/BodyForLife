@@ -1,22 +1,4 @@
 
-
-
-
-/*
-index order of operations
-
-1. check to see if user is still logged in
-	If True > proceed to home screen
-	If False > proceed to login screen
-	
-	
-
-
-*/
-
-
-
-
 <?php
 
 
@@ -30,7 +12,7 @@ index order of operations
 		$workout_id = $_POST['workout_id'];
 		echo $weight;
 		
-		$sql="update exercise set actual_weight ='$weight' where workout_id =$workout_id ";
+		$sql="update workout_template set Actual_Weight ='$weight' where workout_template_id =$workout_id ";
 		echo $sql;
 		$result=mysql_query($sql);
 			//if errors, show why.
@@ -51,34 +33,30 @@ index order of operations
 		<meta name="keywords" content="Flux, Mac" >
 		<link href="main.css" rel="stylesheet" type="text/css" >
 		<title>My Webpage</title>
-	</head>
+	<meta name="flux-custom-url" content="localhost:8889" ></head>
 	<body style="" >
 	
 	
 	<?php
 
 
-$sql='select exercise_id,muscle_group_id,plan_reps,plan_weight from exercise where exercise_id = 1 limit 1';
+$sql='select workout_template_id,Planned_Exercize from workout_template where workout_template_id = 2 limit 1';
 $result=mysql_query($sql);
 if(!$result) {echo "there was an error:" .mysql_error($db); exit();}
 if(mysql_num_rows($result)==0){echo "there are no workouts";}
 while($row = mysql_fetch_assoc($result)){
 //	echo "<pre>"; print_r($row);
 	echo $row["Planned_Exercize"];
-	$workout_id = $row["exercise"];
+	$workout_id = $row["workout_template_id"];
 	}
 $planned_weight = 40;
 ?>
 
 
-
-
 	
 	<form name="myform" method="POST" >
-	<label type="text" name"day_of_week"><?php echo date("l");?></label>
-	<br>
 	
-planned weight: <label type="text" name="exercise"><?php echo $planned_weight;?></label>
+planned weight: <label type="text" name="exercise" ><?php echo $planned_weight;?></label>
 <input type="text" name="weight" value="" placeholder="weight" />
 <input type="text" name="reps" value="" placeholder="reps" />
 <input type="text" name="intensity" value="" placeholder="intensity" />
@@ -104,5 +82,6 @@ planned weight: <label type="text" name="exercise"><?php echo $planned_weight;?>
 </select>
 </form>
 	
-</body></html>
 
+
+</body></html>
