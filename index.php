@@ -1,108 +1,112 @@
-
-
+<?php
 
 
 /*
-index order of operations
+index of operations
 
 1. check to see if user is still logged in
 	If True > proceed to home screen
 	If False > proceed to login screen
+ 
+2. show user name, date, body, 
 	
-	
-
-
 */
 
+include_once 'includes/db.php';
 
 
 
-<?php
-
-
-//echo "<pre>"; print_r($_SERVER);exit();
-
-	include 'db.php';
-	if(isset($_POST["spencerssubmit"])){
-		//spencer here is where you could insert into the database
-		echo "<pre>"; print_r($_POST);
-		$weight=$_POST["weight"];
-		$workout_id = $_POST['workout_id'];
-		echo $weight;
-		
-		$sql="update exercise set actual_weight ='$weight' where workout_id =$workout_id ";
-		echo $sql;
-		$result=mysql_query($sql);
-			//if errors, show why.
-		if(!$result) {echo "there was an error:" .mysql_error($db); exit();}
-
-	
-	}
-	
 ?>
+ 
+    <html>
+        <head>    
+        <script  src="js/ajax.js" type="text/javascript"></script>
+         
+     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
 
+     
+     <script type="text/javascript">
+         function getUsers()
+         {
+             makeHttpRequest('includes/ajax.php','getUsers=1',callBack_getUsers)
+         }
+         
+         function callBack_getUsers(returnedText)
+         {
+             
+             console.log(returnedText); //sends data to console instead of alert box. 
+             document.getElementById("users").innerHTML=returnedText;
+         }
+         
+         function goToUser(idPassedIn)
+         {
+             alert('hey there number '+ idPassedIn)
+         }
+        
+        onLoad=getUsers();
+ 
+     </script>
+     
 
+        <link type="text/css" 
+              rel="stylesheet" 
+              href="bfl.css">
+        
+        </head>
+        <body>
+            
+            
+            <div id="inputForm" align="center" >
+                
+                <form action="newUserSignup.php" method="post">
+                    <input type="text" name="formFirstNameEntered" placeholder="First Name" class="inputBox"/><br>
+                    <input type="text" name="formLastNameEntered" placeholder="Last Name" class="inputBox"/>
+            </div>
+                            
+                    <input type="submit" />
+                </form>
 
+                
+                
+    <div id="users" align="center">
+       
+   
+    <?php
+    /*
+    
+    
+$result = mysql_query("SELECT * FROM user limit 8");
 
-<html><head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-		<meta name="author" content="Flux User" >
-		<meta name="description" content="My Website" >
-		<meta name="keywords" content="Flux, Mac" >
-		<link href="main.css" rel="stylesheet" type="text/css" >
-		<title>My Webpage</title>
-	</head>
-	<body style="" >
-	
-	
-	<?php
+    while($row = mysql_fetch_array($result))
+        {
+        echo "<div class='orderedListOfUsers' >";
+        echo $row['first_name'];
+        echo "</div>";
+        
+        }
+  */
+  ?>
 
-
-$sql='select exercise_id,muscle_group_id,plan_reps,plan_weight from exercise where exercise_id = 1 limit 1';
-$result=mysql_query($sql);
-if(!$result) {echo "there was an error:" .mysql_error($db); exit();}
-if(mysql_num_rows($result)==0){echo "there are no workouts";}
-while($row = mysql_fetch_assoc($result)){
-//	echo "<pre>"; print_r($row);
-	echo $row["Planned_Exercize"];
-	$workout_id = $row["exercise"];
-	}
-$planned_weight = 40;
-?>
-
-
-
-
-	
-	<form name="myform" method="POST" >
-	<label type="text" name"day_of_week"><?php echo date("l");?></label>
-	<br>
-	
-planned weight: <label type="text" name="exercise"><?php echo $planned_weight;?></label>
-<input type="text" name="weight" value="" placeholder="weight" />
-<input type="text" name="reps" value="" placeholder="reps" />
-<input type="text" name="intensity" value="" placeholder="intensity" />
-<input type="hidden" name="workout_id" value="<?php echo $workout_id;?>" placeholder="weight" />
-
-
-
-
-
-<input type="submit" name="spencerssubmit" value="Submit" />
-
-<select>
-	<optgroup label="Mac laptops" >
-		<option value="macbook" >MacBook</option>
-		<option value="macbookpro" >MacBook Pro</option>
-	</optgroup>
-	
-	<optgroup label="Mac desktops" >
-		<option value="macmini" >Mac Mini</option>
-		<option value="macpro" >Mac Pro</option>
-		<option value="imac" >iMac</option>
-	</optgroup>
-</select>
-</form>
-	
-</body></html>
-
+        
+    </div>
+    </body>
+    </html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <?php  

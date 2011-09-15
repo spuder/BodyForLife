@@ -1,33 +1,37 @@
-body {
-	overflow:hidden;
-	background-image:initial;
-	background-repeat-x:initial;
-	background-repeat-y:initial;
-	background-repeat:no-repeat;
-	background-attachment:initial;
-	background-position:initial initial;
-	background-position-x:initial;
-	background-position-y:initial;
-	background-origin:initial;
-	background-clip:initial;
-	background-color:#D7D7D7;
-	margin:0;
-	padding:0;
+
+body {background-image:url('/images/diamondPlateTile12.png');
+     
+     }
+
+
+#inputBox{
+    background-color: #ff0000; 
+    color: #000000;
 }
 
-#body {
-	width:320px;
-	height:460px;
-	background-image:initial;
-	background-repeat-x:initial;
-	background-repeat-y:initial;
-	background-repeat:no-repeat;
-	background-attachment:initial;
-	background-position:initial initial;
-	background-position-x:initial;
-	background-position-y:initial;
-	background-origin:initial;
-	background-clip:initial;
-	background-color:#000000;
+.inputBox{
+    
+    background-color:#ffffff;
+    height: 10%;
+    width: 40%;
+    
+    font-size: XX-large;
+    
 }
 
+
+/* class */
+#orderedListOfUsers{
+    font-size: xx-large;
+}
+
+/* id */
+.orderedListOfUsers{
+    
+    width: 33%;
+    min-height: 10%;
+    font-family: 'Times New Roman',Times,serif;
+    font-size: X-large;
+    font-weight: bold;
+    background-color: green;
+}

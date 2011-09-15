@@ -8,13 +8,18 @@
 function iPhoneModifications(){
 
 
- if($browser == 'iphone'){ 
+ if($browser == 'iphone')
+ { 
   <title>Short iPhone only title</title>
- }else{ 
-  <title>Regular title</title> }
+ }
+ else
+ { 
+  echo "<title>Regular title</title>";
+ }
 
 //disallow pinch zoom
-if($browser == 'iphone'){ 
+if($browser == 'iphone')
+   { 
   <meta name="viewport"
   content="width=device-width,
   minimum-scale=1.0, maximum-scale=1.0" />
